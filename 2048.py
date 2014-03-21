@@ -31,7 +31,7 @@ def proceed_move():
     QCoreApplication.postEvent(web, ev)
 
     # Restart the timer for the next action
-    timer.start(100)
+    timer.start()
 proceed_move.last_score = 1
 
 
@@ -44,14 +44,12 @@ def extract_data():
         el = document.findFirstElement("a.retry-button");
         el.evaluateJavaScript("this.click()");
 
-    # Extract the game informations from the DOM
     game = [[None, None, None, None],
             [None, None, None, None],
             [None, None, None, None],
             [None, None, None, None]]
 
-
-    # Extract board informations
+    # Extract board informations from the DOM
     for x in range(0, 4):
         for y in range(0, 4):
             dom_class = ".tile-position-" + str(x + 1) + "-" + str(y + 1)
@@ -87,6 +85,6 @@ web.show()
 # Launch the action timer to start playing
 timer = QTimer()
 timer.timeout.connect(proceed_move)
-timer.start(100)
+timer.start()
 
 os._exit(app.exec_())
