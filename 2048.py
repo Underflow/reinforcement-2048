@@ -1,3 +1,5 @@
+#! env python2.7
+
 import sys
 import os
 import time
@@ -33,7 +35,7 @@ class Game:
 
         self.browser.sendMove(self.ai.get_move(score, board))
 
-        self.timer.start() # restart the asynchronous loop
+        self.timer.start() # restart the event loop
 
 game = Game()
-os._exit(game.run(0))
+game.run(0)
