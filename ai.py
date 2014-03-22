@@ -1,13 +1,14 @@
 import copy
 import sys
-from decision_tree import DecisionTree
 import feature_reader
+from genome import Genome
 
 class AI:
     def __init__(self):
         self.score = 0
         self.count = 0
         sys.stdout.write("[")
+        self.genome = Genome(30)
 
     def __del__(self):
         sys.stdout.write("]\n")
@@ -21,8 +22,5 @@ class AI:
 
     def get_move(self, score, board):
         self.score = score
-
-        (features, features_limits) = feature_reader.extract_features(board)
-
-        dt = DecisionTree(3, features_limits)
-        return dt.decide(features)
+        features = feature_reader.extract_features(board)
+        return self.genome.decide(features)

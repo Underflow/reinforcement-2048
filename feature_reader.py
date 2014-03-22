@@ -20,20 +20,25 @@ def get_histograms(board):
 
     return (xhisto, yhisto)
 
+def get_features_limits():
+    features_limits = []
+    for i in range(0, 8):
+        features_limits.append([0, 40])
+    for i in range(0, 5):
+        features_limits.append([0, 0])
+    return features_limits
+
 def extract_features(board):
     # Dim(set) = 13
     features = []
-    features_limits = []
 
     # Vertical/horizontal density extraction
     # Dim = 8
     (xdensity, ydensity) = get_histograms(board)
     for density in xdensity:
         features.append(density)
-        features_limits.append([0, 40])
     for density in ydensity:
         features.append(density)
-        features_limits.append([0, 40])
 
 
 
@@ -41,13 +46,11 @@ def extract_features(board):
     # Dim = 4
     for direction in range(0, 4):
         features.append(mergeable_tiles(board, direction))
-        features_limits.append([0, 0])
 
     # Variance of the board
     # Dim = 1
     features.append(get_variance(board))
-    features_limits.append([0, 0])
 
-    return (features, features_limits)
+    return features
 
 
