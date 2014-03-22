@@ -44,8 +44,9 @@ class Browser:
             for y in range(0, 4):
                 dom_class = ".tile-position-" + str(x + 1) + "-" + str(y + 1)
                 tile = document.findFirstElement(dom_class)
-                if tile.toPlainText() != '':
-                    game[y][x] = int(tile.toPlainText()[:-1])
+                tiles = document.documentElement().findAll(dom_class)
+                if tiles:
+                    game[y][x] = int(tiles[-1].toPlainText()[:-1])
 
         # Extract the score
         score = document.findFirstElement(".score-container").toPlainText()

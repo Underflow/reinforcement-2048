@@ -38,4 +38,4 @@ class Game:
         self.timer.start() # restart the event loop
 
 game = Game()
-game.run(0)
+game.run(10)
