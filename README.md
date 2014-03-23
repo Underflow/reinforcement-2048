@@ -6,7 +6,10 @@ genetic algorithm.
 
 It is able to learn but it's not really efficient yet !
 
-Maximum score: 8244
+Results
+=======
+
+Best score : 9976, after 10min training, did a 1024 tile
 
 Training results
 ----------------
