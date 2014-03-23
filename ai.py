@@ -1,24 +1,26 @@
 import copy
 import sys
 import feature_reader
-from genome import Genome
+from population import Population
 
 class AI:
     def __init__(self):
         self.score = 0
         self.count = 0
-        sys.stdout.write("[")
-        self.genome = Genome(30)
+        # sys.stdout.write("[")
+        self.population = Population(10)
 
-    def __del__(self):
-        sys.stdout.write("]\n")
+    # def __del__(self):
+        # sys.stdout.write("]\n")
 
     def restart_game(self):
         if self.score > 0:
-            if self.count > 0:
-                sys.stdout.write(", ")
-            sys.stdout.write(str(self.score))
+            # if self.count > 0:
+            #    sys.stdout.write(", ")
+            #sys.stdout.write(str(self.score))
             self.count += 1
+            self.population.get_cur().score = self.score
+            self.population.go_next()
 
     def get_allowed_moves(self, board):
         allowed = [False, False, False, False]
@@ -37,8 +39,8 @@ class AI:
 
         return allowed
 
-
     def get_move(self, score, board):
         self.score = score
         features = feature_reader.extract_features(board)
-        return self.genome.decide(features, self.get_allowed_moves(board))
+        g = self.population.get_cur()
+        return g.decide(features, self.get_allowed_moves(board))
