@@ -13,7 +13,7 @@ class Genome:
 
     def randomize(self):
         for i in range(0, self.size):
-            self.genes.append(DecisionTree(5, self.limits))
+            self.genes.append(DecisionTree(6, self.limits))
 
     def crossover(self, p1, p2):
         for _ in range(self.size):
