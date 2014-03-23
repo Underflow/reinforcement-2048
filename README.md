@@ -1,5 +1,12 @@
 ai2048
 ======
 
-An AI scaffold for the 2048 game.
-It plays random moves at the moment.
+A reinforcement learning algorithm for the 2048 game using decisions tree and a
+genetic algorithm.
+
+It is able to learn but it's not really efficient yet !
+
+Training results
+----------------
+
+![Training](training.png)

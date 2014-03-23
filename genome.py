@@ -8,11 +8,12 @@ class Genome:
         self.genes = []
         self.size = size
         self.score = 0
+        self.limits = feature_reader.get_features_limits()
+
 
     def randomize(self):
-        limits = feature_reader.get_features_limits()
         for i in range(0, self.size):
-            self.genes.append(DecisionTree(3, limits))
+            self.genes.append(DecisionTree(5, self.limits))
 
     def crossover(self, p1, p2):
         for _ in range(self.size):
@@ -20,6 +21,11 @@ class Genome:
                 self.genes.append(p1.genes[random.randint(0, self.size - 1)])
             else:
                 self.genes.append(p2.genes[random.randint(0, self.size - 1)])
+
+    def mutate(self):
+        if random.randint(0, 10) == 0:
+            gene = random.randint(0, self.size - 1)
+            self.genes[gene] = DecisionTree(5, self.limits)
 
     def decide(self, X, allowed):
         choices = [0, 0, 0, 0]
