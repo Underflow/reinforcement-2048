@@ -5,7 +5,7 @@ A reinforcement learning algorithm for the 2048 game using decisions tree and a
 genetic algorithm.
 
 The AI doesn't know the consequences of it's actions, it only see the game
-state and it's score. No heuristic is used : the goal is to see if is it
+state and it's score. No heuristic is used : the goal is to see if it is
 possible for an AI to learn how to solve the game by itself.
 
 It is able to learn but it have not solved the game yet !
