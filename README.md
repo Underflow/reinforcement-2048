@@ -9,9 +9,9 @@ It is able to learn but it's not really efficient yet !
 Results
 =======
 
-Best score : 9976, after 10min training, did a 1024 tile
+Best score : 9976 (after 10min training, did a 1024 tile)
 
-Training results
+Training overview
 ----------------
 
 ![Training](training.png)

@@ -40,8 +40,6 @@ def extract_features(board):
     for density in ydensity:
         features.append(density)
 
-
-
     # Number of close mergeable tiles for each direction
     # Dim = 4
     for direction in range(0, 4):
@@ -52,5 +50,3 @@ def extract_features(board):
     features.append(get_variance(board))
 
     return features
-
-

@@ -7,17 +7,10 @@ class AI:
     def __init__(self):
         self.score = 0
         self.count = 0
-        # sys.stdout.write("[")
         self.population = Population(10)
-
-    # def __del__(self):
-        # sys.stdout.write("]\n")
 
     def restart_game(self):
         if self.score > 0:
-            # if self.count > 0:
-            #    sys.stdout.write(", ")
-            #sys.stdout.write(str(self.score))
             self.count += 1
             self.population.get_cur().score = self.score
             self.population.go_next()

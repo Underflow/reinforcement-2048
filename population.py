@@ -14,9 +14,8 @@ class Population:
     def go_next(self):
         self.cur += 1
         if self.cur >= self.size:
-            # This is a new generation
             aver = sum(ind.score for ind in self.individuals) / len(self.individuals)
-            print("Population average: " + str(aver))
+            print(aver)
             self.cur = 0
             self.crossover()
             self.mutate()
@@ -41,7 +40,6 @@ class Population:
             new.append(g)
 
         self.individuals = new
-
 
     def mutate(self):
         for individual in self.individuals:
