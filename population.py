@@ -7,13 +7,11 @@ class Population:
         self.cur = 0
         self.individuals = []
         for _ in range(self.size):
-            g = Genome(20)
+            g = Genome(10)
             g.randomize()
             self.individuals.append(g)
 
     def go_next(self):
-        print('fitness(' + str(self.cur) + ') = ' +
-                str(self.individuals[self.cur].score))
         self.cur += 1
         if self.cur >= self.size:
             # This is a new generation
@@ -31,7 +29,6 @@ class Population:
 
     def crossover(self):
         new = []
-        # FIXME: Sort in invert order
         self.individuals = sorted(self.individuals,
                 key = lambda ind: ind.score,
                 reverse = True)
@@ -39,7 +36,7 @@ class Population:
         for _ in range(self.size):
             p1 = self.select()
             p2 = self.select()
-            g = Genome(20)
+            g = Genome(10)
             g.crossover(p1, p2)
             new.append(g)
 
@@ -47,7 +44,6 @@ class Population:
 
 
     def mutate(self):
-        print("Processing mutation")
         for individual in self.individuals:
             individual.mutate()
 
