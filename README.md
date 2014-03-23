@@ -14,9 +14,9 @@ Best score : 10620 (after 10min training, did a 1024 tile)
 Training overview
 ----------------
 
-![Training](training3 .png)
+![Training](images/training3 .png)
 
 Others interesting trainig sessions :
 
-![Training](training.png)
-![Training](training2.png)
+![Training](images/training.png)
+![Training](images/training2.png)
