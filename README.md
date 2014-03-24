@@ -47,6 +47,8 @@ Finally, may be try to design a "real" genetic programming algorithm :D
 Results
 =======
 
+These results has been measured at the git rev 214d1a68b9b3053a3dc44ca446cf80974d071032
+
 High scores
 -----------
 
