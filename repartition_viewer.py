@@ -16,6 +16,5 @@ def showRepartition(values):
 input_str = ""
 for line in sys.stdin:
     input_str += line
-print(input_str)
 values = json.loads(input_str)
 showRepartition(values)
