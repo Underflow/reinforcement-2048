@@ -1,5 +1,4 @@
 import sys
-import PySide.QtWebKit
 from PySide.QtCore import *
 from PySide.QtGui import *
 from PySide.QtWebKit import *
