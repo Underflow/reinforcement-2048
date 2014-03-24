@@ -18,7 +18,7 @@ class DecisionTest:
 class DecisionTree:
     def __init__(self, height, features_limits):
         if height == 0:
-            self.value = random.randint(0, 3)
+            self.value = random.randint(0, 10)
             self.left = None
             self.right = None
             self.test = None

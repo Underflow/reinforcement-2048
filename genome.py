@@ -30,7 +30,10 @@ class Genome:
     def decide(self, X, allowed):
         choices = [0, 0, 0, 0]
         for i in range(0, self.size):
-            choices[self.genes[i].decide(X)] += 1
+            decision = self.genes[i].decide(X)
+            # If the decision is not an "unknown state" of the tree
+            if decision < len(choices):
+                choices[decision] += 1
         for i in range(0, 4):
             if not allowed[i]:
                 choices[i] = -1

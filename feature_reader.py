@@ -24,8 +24,8 @@ def get_features_limits():
     features_limits = []
     for i in range(0, 8):
         features_limits.append([0, 40])
-    for i in range(0, 5):
-        features_limits.append([0, 0])
+#    for i in range(0, 5):
+#        features_limits.append([0, 0])
     return features_limits
 
 def extract_features(board):
@@ -42,11 +42,11 @@ def extract_features(board):
 
     # Number of close mergeable tiles for each direction
     # Dim = 4
-    for direction in range(0, 4):
-        features.append(mergeable_tiles(board, direction))
+    # for direction in range(0, 4):
+    #    features.append(mergeable_tiles(board, direction))
 
     # Variance of the board
     # Dim = 1
-    features.append(get_variance(board))
+    # features.append(get_variance(board))
 
     return features
