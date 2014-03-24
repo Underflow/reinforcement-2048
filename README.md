@@ -25,8 +25,8 @@ Leafs contains either a decision either an "unknown decision".
 The decision taken by an individual is choosed by a majority vote of each decision tree.
 Of course, unknown decisions are not considered in the vote.
 
-My vision of this design is that each tree "can be seen as a detector" of a
-specific configuration of the board that should lead to a specific action.
+My vision of this design is that each tree "can be seen as a detector" of some
+specific configurations of the board that should lead to a specific action.
 
 Potential improvements
 ----------------------
