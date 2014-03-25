@@ -5,6 +5,7 @@ class Population:
     def __init__(self, size):
         self.size = size
         self.cur = 0
+        self.gen = 0
         self.individuals = []
         for _ in range(self.size):
             g = Genome(10)
@@ -15,14 +16,16 @@ class Population:
         self.cur += 1
         if self.cur >= self.size:
             aver = sum(ind.score for ind in self.individuals) / len(self.individuals)
-            print(aver)
             self.cur = 0
             self.crossover()
             self.mutate()
 
+            print("{ population: " + str(self.gen) + ", average: " + str(aver) + "}")
+            self.gen += 1
+
     def select(self):
         for i in range(self.size):
-            if random.randint(0, 2) == 0:
+            if random.randint(0, 3) == 0:
                 return self.individuals[i]
         return self.individuals[0]
 

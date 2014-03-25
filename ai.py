@@ -11,6 +11,7 @@ class AI:
 
     def restart_game(self):
         if self.score > 0:
+            print("{ ind_score: " + str(self.score) + " }")
             self.count += 1
             self.population.get_cur().score = self.score
             self.population.go_next()
